@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="accent_color">#81BC48</color>
+    <color name="light_gradient_start">#303943</color>
+    <color name="light_gradient_end">#181E25</color>
+    <color name="dark_gradient_start">#303943</color>
+    <color name="dark_gradient_end">#181E25</color>
+    <color name="light_background">#1A1D21</color>
+    <color name="dark_background">#1A1D21</color>
+    <color name="light_text">#E0E0E0</color>
+    <color name="dark_text">#E0E0E0</color>
+    <color name="neomorph_background">#303234</color>
+    <color name="light_shadow">#CC464749</color>
+    <color name="dark_shadow">#181e25</color>
+</resources>

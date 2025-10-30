@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Massenger</string>
+    <string name="feed_title">Новости</string>
+    <string name="profile_title">Профиль</string>
+    <string name="settings_title">Настройки</string>
+    <string name="dark_theme">Темная тема</string>
+</resources>

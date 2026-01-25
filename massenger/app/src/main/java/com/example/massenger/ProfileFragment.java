@@ -33,8 +33,6 @@ public class ProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate: ProfileFragment создается");
-        
-        // Инициализируем ViewModel
         profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
     }
     

@@ -3,38 +3,82 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="0dp"
+    android:padding="16dp"
     android:background="?android:attr/windowBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
+        android:orientation="horizontal"
         android:padding="16dp">
 
-        <com.github.sshadkany.shapes.CircleView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_margin="16dp"
-            android:gravity="center"
-            app:shape_circle_backgroundColor="@color/neomorph_background"
-            app:shape_circle_dark_color="@color/dark_shadow"
-            app:shape_circle_light_color="@color/light_shadow"
-            app:shape_circle_shadow_type="drop_shadow">
-
-            <ImageView
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/nano"/>
-
-        </com.github.sshadkany.shapes.CircleView>
-
-        <com.github.sshadkany.shapes.RoundRectView
-            android:layout_width="match_parent"
+        <!-- Левая колонка: фото и статус -->
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="16dp">
+
+            <com.github.sshadkany.shapes.CircleView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                app:shape_circle_backgroundColor="@color/neomorph_background"
+                app:shape_circle_dark_color="@color/dark_shadow"
+                app:shape_circle_light_color="@color/light_shadow"
+                app:shape_circle_shadow_type="drop_shadow">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/nano"/>
+
+            </com.github.sshadkany.shapes.CircleView>
+
+            <!-- Статус прямо под фото -->
+            <com.github.sshadkany.shapes.RoundRectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:shape_roundRect_backgroundColor="@color/neomorph_background"
+                app:shape_roundRect_light_color="@color/light_shadow"
+                app:shape_roundRect_dark_color="@color/dark_shadow"
+                app:shape_roundRect_topLeftRadius="20dp"
+                app:shape_roundRect_topRightRadius="20dp"
+                app:shape_roundRect_bottomLeftRadius="20dp"
+                app:shape_roundRect_bottomRightRadius="20dp"
+                app:shape_roundRect_shadow_type="drop_shadow">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="25dp"
+                    android:layout_margin="30dp">
+
+                    <!-- Отображаемый статус -->
+                    <TextView
+                        android:id="@+id/statusTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="🟢 Онлайн"
+                        android:textColor="@color/accent_color"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </com.github.sshadkany.shapes.RoundRectView>
+        </LinearLayout>
+
+        <!-- Правая колонка: остальная информация профиля -->
+        <com.github.sshadkany.shapes.RoundRectView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
             app:shape_roundRect_backgroundColor="@color/neomorph_background"
             app:shape_roundRect_light_color="@color/light_shadow"
             app:shape_roundRect_dark_color="@color/dark_shadow"
@@ -52,22 +96,6 @@
                 android:layout_margin="30dp">
 
                 <TextView
-                    android:id="@+id/statusTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="🟢 Онлайн"
-                    android:textColor="@color/accent_color"
-                    android:textSize="16sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginVertical="16dp"
-                    android:background="@color/accent_color"
-                    android:alpha="1" />
-
-                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Профиль"
@@ -82,7 +110,6 @@
                     android:layout_marginVertical="16dp"
                     android:background="@color/accent_color"
                     android:alpha="1" />
-
                 <TextView
                     android:id="@+id/nameTextView"
                     android:layout_width="match_parent"
@@ -92,7 +119,6 @@
                     android:textStyle="bold"
                     android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary" />
-
                 <EditText
                     android:id="@+id/nameEditText"
                     android:layout_width="match_parent"
@@ -102,9 +128,8 @@
                     android:textSize="16sp"
                     android:gravity="center"
                     android:textColor="?android:attr/textColorSecondary"
-                    android:backgroundTint="@color/accent_color" 
+                    android:backgroundTint="@color/accent_color"
                     android:alpha="0.5" />
-                
 
                 <TextView
                     android:id="@+id/emailTextView"
@@ -126,7 +151,7 @@
                     android:gravity="center"
                     android:inputType="textEmailAddress"
                     android:textColor="?android:attr/textColorSecondary"
-                    android:backgroundTint="@color/accent_color" 
+                    android:backgroundTint="@color/accent_color"
                     android:alpha="0.5" />
 
                 <Button
@@ -143,5 +168,4 @@
         </com.github.sshadkany.shapes.RoundRectView>
 
     </LinearLayout>
-
 </ScrollView>
